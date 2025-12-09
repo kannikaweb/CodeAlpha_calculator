@@ -2,8 +2,9 @@
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   --bg:#f3f4f6;
   --card:#ffffff;
-  --btn:#e5e7eb;
-  --accent:#0ea5a4;
+  --equal:#0ea5a4;
+  --op:#f87171;
+  --num:#60a5fa;
 }
 
 body{
@@ -11,7 +12,7 @@ body{
   min-height:100vh;
   align-items:center;
   justify-content:center;
-  background:linear-gradient(135deg,#dfe9f3,#ffffff);
+  background:linear-gradient(135deg,#d1e8ff,#ffdde1);
   margin:0;
 }
 
@@ -21,8 +22,8 @@ body{
   padding:18px;
   border-radius:16px;
   box-shadow:
-    0 15px 40px rgba(0,0,0,.08),
-    0 4px 15px rgba(0,0,0,.06);
+    0 15px 40px rgba(0,0,0,.1),
+    0 4px 15px rgba(0,0,0,.08);
   backdrop-filter: blur(8px);
   transition:.3s;
 }
@@ -33,7 +34,7 @@ body{
 
 .display{
   height:70px;
-  background:#0f172a;
+  background:#1e293b;
   color:#fff;
   font-size:30px;
   border-radius:10px;
@@ -56,29 +57,49 @@ body{
   padding:18px;
   border-radius:12px;
   border:0;
-  background:var(--btn);
   font-size:20px;
   cursor:pointer;
-  transition:.2s;
+  transition:.25s;
+  color:#fff;
 }
 
+/* Number Buttons */
+.num{
+  background:linear-gradient(45deg,#60a5fa,#93c5fd);
+}
+
+/* Operator Buttons (+ - * /)  */
+.op{
+  background:linear-gradient(45deg,#f87171,#fca5a5);
+}
+
+/* Clear Button */
+.clr{
+  background:linear-gradient(45deg,#a78bfa,#c4b5fd);
+}
+
+/* Equal Button */
+.equal{
+  background:linear-gradient(45deg,#0ea5a4,#22d3c5);
+  box-shadow:0 5px 12px rgba(14,165,164,0.4);
+  font-weight:600;
+  grid-column:span 2;
+}
+
+/* Button Hover */
 .btn:hover{
-  background:#d1d5db;
-  transform:scale(1.04);
+  filter:brightness(1.15);
+  transform:scale(1.05);
+  box-shadow:0 5px 12px rgba(0,0,0,0.18);
 }
 
+/* On Press */
 .btn:active{
-  transform:scale(.97);
+  transform:scale(.96);
 }
 
+/* Wide Button (0) */
 .btn.wide{
   grid-column:span 2;
 }
 
-.btn.equal{
-  grid-column:span 2;
-  background:var(--accent);
-  color:#fff;
-  font-weight:600;
-  box-shadow:0 5px 12px rgba(14,165,164,0.3);
-}
