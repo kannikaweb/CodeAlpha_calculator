@@ -2,9 +2,13 @@
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   --bg:#f3f4f6;
   --card:#ffffff;
+
   --equal:#0ea5a4;
   --op:#f87171;
   --num:#60a5fa;
+  --clr:#a78bfa;
+
+  --btn-text:#000000; /* BLACK button letters */
 }
 
 body{
@@ -16,6 +20,7 @@ body{
   margin:0;
 }
 
+/* Calculator Container */
 .calc-container{
   width:330px;
   background:var(--card);
@@ -24,7 +29,6 @@ body{
   box-shadow:
     0 15px 40px rgba(0,0,0,.1),
     0 4px 15px rgba(0,0,0,.08);
-  backdrop-filter: blur(8px);
   transition:.3s;
 }
 
@@ -32,10 +36,11 @@ body{
   transform:translateY(-3px);
 }
 
+/* Display */
 .display{
   height:70px;
   background:#1e293b;
-  color:#fff;
+  color:#ffffff;
   font-size:30px;
   border-radius:10px;
   padding:14px;
@@ -43,9 +48,9 @@ body{
   align-items:center;
   justify-content:flex-end;
   overflow:hidden;
-  box-shadow: inset 0 0 8px rgba(255,255,255,0.1);
 }
 
+/* Buttons Grid */
 .buttons{
   display:grid;
   grid-template-columns:repeat(4,1fr);
@@ -53,6 +58,7 @@ body{
   margin-top:16px;
 }
 
+/* Common Button */
 .btn{
   padding:18px;
   border-radius:12px;
@@ -60,7 +66,7 @@ body{
   font-size:20px;
   cursor:pointer;
   transition:.25s;
-  color:#fff;
+  color:var(--btn-text); /* BLACK TEXT */
 }
 
 /* Number Buttons */
@@ -68,7 +74,7 @@ body{
   background:linear-gradient(45deg,#60a5fa,#93c5fd);
 }
 
-/* Operator Buttons (+ - * /)  */
+/* Operator Buttons */
 .op{
   background:linear-gradient(45deg,#f87171,#fca5a5);
 }
@@ -81,19 +87,18 @@ body{
 /* Equal Button */
 .equal{
   background:linear-gradient(45deg,#0ea5a4,#22d3c5);
-  box-shadow:0 5px 12px rgba(14,165,164,0.4);
   font-weight:600;
   grid-column:span 2;
 }
 
-/* Button Hover */
+/* Hover Effect */
 .btn:hover{
-  filter:brightness(1.15);
+  filter:brightness(1.1);
   transform:scale(1.05);
   box-shadow:0 5px 12px rgba(0,0,0,0.18);
 }
 
-/* On Press */
+/* Active Effect */
 .btn:active{
   transform:scale(.96);
 }
@@ -102,4 +107,3 @@ body{
 .btn.wide{
   grid-column:span 2;
 }
-
