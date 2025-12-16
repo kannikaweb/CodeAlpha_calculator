@@ -3,12 +3,9 @@
   --bg:#f3f4f6;
   --card:#ffffff;
 
-  --equal:#0ea5a4;
-  --op:#f87171;
-  --num:#60a5fa;
-  --clr:#a78bfa;
-
-  --btn-text:#000000; /* BLACK button letters */
+  --btn-bg:#ffffff;     /* WHITE button background */
+  --btn-text:#000000;   /* BLACK text */
+  --btn-border:#e5e7eb;
 }
 
 body{
@@ -29,11 +26,6 @@ body{
   box-shadow:
     0 15px 40px rgba(0,0,0,.1),
     0 4px 15px rgba(0,0,0,.08);
-  transition:.3s;
-}
-
-.calc-container:hover{
-  transform:translateY(-3px);
 }
 
 /* Display */
@@ -47,7 +39,6 @@ body{
   display:flex;
   align-items:center;
   justify-content:flex-end;
-  overflow:hidden;
 }
 
 /* Buttons Grid */
@@ -62,40 +53,43 @@ body{
 .btn{
   padding:18px;
   border-radius:12px;
-  border:0;
+  border:1px solid var(--btn-border);
   font-size:20px;
   cursor:pointer;
   transition:.25s;
-  color:var(--btn-text); /* BLACK TEXT */
+  background:var(--btn-bg);   /* WHITE */
+  color:var(--btn-text);     /* BLACK */
+  font-weight:500;
 }
 
 /* Number Buttons */
 .num{
-  background:linear-gradient(45deg,#60a5fa,#93c5fd);
+  background:var(--btn-bg);
 }
 
 /* Operator Buttons */
 .op{
-  background:linear-gradient(45deg,#f87171,#fca5a5);
+  background:var(--btn-bg);
 }
 
 /* Clear Button */
 .clr{
-  background:linear-gradient(45deg,#a78bfa,#c4b5fd);
+  background:#fef2f2;
 }
 
 /* Equal Button */
 .equal{
-  background:linear-gradient(45deg,#0ea5a4,#22d3c5);
+  background:#000000;
+  color:#ffffff;
   font-weight:600;
   grid-column:span 2;
 }
 
 /* Hover Effect */
 .btn:hover{
-  filter:brightness(1.1);
+  background:#f3f4f6;
   transform:scale(1.05);
-  box-shadow:0 5px 12px rgba(0,0,0,0.18);
+  box-shadow:0 5px 12px rgba(0,0,0,0.15);
 }
 
 /* Active Effect */
@@ -107,3 +101,4 @@ body{
 .btn.wide{
   grid-column:span 2;
 }
+
